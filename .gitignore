@@ -1,0 +1,97 @@
+# ==========================
+# Python
+# ==========================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# ==========================
+# Virtual Environment
+# ==========================
+.venv/
+venv/
+env/
+
+# ==========================
+# IDE
+# ==========================
+.vscode/
+.idea/
+*.code-workspace
+
+# ==========================
+# OS Files
+# ==========================
+.DS_Store
+Thumbs.db
+
+# ==========================
+# Logs
+# ==========================
+logs/
+*.log
+
+# ==========================
+# Local Data
+# ==========================
+data/
+
+# # Ignore everything inside those folders and Keep folder placeholders
+data/*
+data/raw/*
+!data/raw/.gitkeep
+
+data/bronze/*
+!data/bronze/.gitkeep
+
+data/silver/*
+!data/silver/.gitkeep
+
+data/gold/*
+!data/gold/.gitkeep
+
+# ==========================
+# DuckDB
+# ==========================
+*.duckdb
+*.wal
+
+# ==========================
+# Streamlit
+# ==========================
+.streamlit/secrets.toml
+
+# ==========================
+# Jupyter
+# ==========================
+.ipynb_checkpoints/
+
+# ==========================
+# Build
+# ==========================
+build/
+dist/
+
+# ==========================
+# Hatch
+# ==========================
+.hatch/
+
+# ==========================
+# OCI
+# ==========================
+.oci/
+
+# ==========================
+# Environment Variables
+# ==========================
+.env
+.env.*
