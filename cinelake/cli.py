@@ -4,6 +4,7 @@ from cinelake.config.logger import configure_logger
 from cinelake.config.settings import load_settings
 from cinelake.ingestion.downloader import IMDbDownloader
 from cinelake.bronze.bronze_processor import BronzeProcessor
+from cinelake.silver.silver_processor import SilverProcessor
 
 configure_logger()
 
@@ -31,17 +32,21 @@ def bronze():
 @app.command()
 def silver():
     """
-    Run Silver processing.
+    Process Bronze Delta tables into Silver Delta tables.
     """
-    typer.echo("Silver processing not implemented yet.")
+    settings = load_settings()
+    processor = SilverProcessor(settings)
+    processor.process_all()
 
 
 @app.command()
 def gold():
     """
-    Run Gold processing.
+    Process Silver Delta tables into Gold Delta tables.
     """
-    typer.echo("Gold processing not implemented yet.")
+    settings = load_settings()
+    #processor = GoldProcessor(settings)
+    #processor.process_gold()
 
 
 if __name__ == "__main__":
